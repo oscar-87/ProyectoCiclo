@@ -1,0 +1,8 @@
+extends layout
+  
+block content
+  h1=title
+  p Esta es la segunda pagina
+  select(name="producto")
+    each producto, i in productos
+        option(value="#{producto.nombre}") #{producto.nombre}

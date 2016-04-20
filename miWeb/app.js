@@ -5,13 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
-
+var routes = require('./mvc/routes/index');
+var users = require('./mvc/routes/users');
+//necesario para utilizar los verbos put y delete en formularios
+var methodOverride = require('method-override');
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname,'mvc', 'views'));
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
